@@ -8,6 +8,7 @@ import { Inter } from "next/font/google"
 import Image from "next/image"
 import "./globals.css"
 import Banner from "@/src/components/Banner"
+import SearchBar from "@/src/components/Search"
 
 const user = {
   name: "Tom Cook",
@@ -41,8 +42,8 @@ function classNames(...classes) {
 
 export default function RootLayout({ children }) {
   return (
-    <html class="h-full bg-gray-100">
-      <body class="h-full">
+    <html className="h-full bg-gray-100">
+      <body className="h-full">
         <div className="min-h-full">
           <header className="bg-white shadow">
             <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
@@ -223,9 +224,14 @@ export default function RootLayout({ children }) {
           </Disclosure>
 
           <main>
-            <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-              {/* Your content */}
-              <Banner />
+            <div className="w-full py-6">
+              <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+                {/* Your content */}
+                <Banner />
+              </div>
+            </div>
+            <div className="mx-auto py-10 bg-black">
+              <SearchBar />
             </div>
           </main>
         </div>
